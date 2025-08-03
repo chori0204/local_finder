@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 // static 으로 선언하는 이유 : 앱 전역에서 클래스 생성 없이 동일한 색상을 재사용하기 위함
 // const로 선언하는 이유 : 앱이 실행되는 동안 변경되지 않는 상수 값으로 사용하기 위함
 // 어디서든 이렇게 사용 가능 - AppColors.primary
-class LightAppColors {
+class LightAppColors
+ {
   static const Color primaryColor = Color(0xFF6200EE);
   static const Color secondaryColor = Color(0xFF03DAC6);
   static const Color backgroundColor = Color(0xFFF5F5F5);
@@ -18,7 +19,8 @@ class LightAppColors {
 
 }
 
-class DarkAppColors {
+class DarkAppColors
+ {
   static const Color primaryColor = Color(0xFFBB86FC);
   static const Color secondaryColor = Color(0xFF03DAC6);
   static const Color backgroundColor = Color(0xFF121212);
