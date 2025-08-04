@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "133485594821",
+    "project_id": "local-finder-c25fd",
+    "storage_bucket": "local-finder-c25fd.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:133485594821:android:c8182ebf8e0635e76a48ac",
+        "android_client_info": {
+          "package_name": "com.example.local_finder"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASLGdPDTRMAKnEwKcA0ejj16NTcbJNA5Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
