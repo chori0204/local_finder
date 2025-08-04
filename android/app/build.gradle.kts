@@ -45,3 +45,9 @@ android {
 flutter {
     source = "../.."
 }
+apply plugin: 'com.google.gms.google-services'  // 파일 하단에 추가
+
+android {
+    compileSdkVersion 34  // 최신 버전 권장
+    ...
+}
