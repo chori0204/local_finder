@@ -1,15 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:local_finder/core/routes/app_routes.dart';
-import '/core/theme/app_theme.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:local_finder/core/providers/search_providers.dart';
+import 'package:local_finder/services/api/naver_api_service.dart';
 
-PreferredSizeWidget myAppBar(BuildContext context) {
+PreferredSizeWidget myAppBar(BuildContext context, WidgetRef ref) {
   final routeName = ModalRoute.of(context)?.settings.name ?? '';
   final appBarTheme = Theme.of(context).appBarTheme;
 
+  void onSearch(String keyword) {
+    if (keyword.trim().isEmpty) return;
+
+  ///ref.read 대신 ref.watch가 아닌 이유는 상태 변경 시 빌드가 다시 발생하는 걸 피하려는 목적 
+  ///(read는 구독하지 않고 읽기만 함)
+    ref.read(searchKeywordProvider.notifier).state = keyword.trim();
+  // ✨ API 호출
+    fetchNaverLocalSearch(keyword).then((results) {
+      debugPrint('검색 결과: ${results.length}건');
+    }).catchError((e) {
+      debugPrint('❌ 검색 실패: $e');
+    });
+
+    debugPrint('검색어 입력됨: $keyword');
+  }
+
   switch (routeName) {
     case MyAppRoutes.finderPage:
-          return AppBar(
+      return AppBar(
         title: TextField(
+          onSubmitted: onSearch,
           decoration: InputDecoration(
             filled: true,
             hintText: '동 명을 입력해주세요',
@@ -33,9 +52,11 @@ PreferredSizeWidget myAppBar(BuildContext context) {
         elevation: appBarTheme.elevation,
         centerTitle: appBarTheme.centerTitle,
       );
+
     case MyAppRoutes.listPage:
       return AppBar(
         title: TextField(
+          onSubmitted: onSearch,
           style: Theme.of(context).textTheme.bodyLarge,
           decoration: InputDecoration(
             hintText: '동 명을 입력해주세요',

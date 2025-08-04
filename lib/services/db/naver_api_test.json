@@ -1,0 +1,23 @@
+ [	{
+			"title":"<b>강남<\/b>구청",
+			"link":"http:\/\/www.gangnam.go.kr\/",
+			"category":"공공,사회기관>구청",
+			"description":"",
+			"telephone":"",
+			"address":"서울특별시 강남구 삼성동 16-1 강남구청",
+			"roadAddress":"서울특별시 강남구 학동로 426 강남구청",
+			"mapx":"1270475020",
+			"mapy":"375173050"
+		},
+		{
+			"title":"코엑스",
+			"link":"http:\/\/www.coex.co.kr\/",
+			"category":"문화,예술>컨벤션센터",
+			"description":"",
+			"telephone":"",
+			"address":"서울특별시 강남구 삼성동 159",
+			"roadAddress":"서울특별시 강남구 영동대로 513",
+			"mapx":"1270594274",
+			"mapy":"375116620"
+		}
+    ]
