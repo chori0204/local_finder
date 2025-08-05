@@ -36,4 +36,8 @@ class Location {
       mapy: json['mapy'] as String,
     );
   }
+
+  get mabX => null;
+
+  get mabY => null;
 }

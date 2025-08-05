@@ -9,7 +9,7 @@ import 'features/widgets/bottom_nav_bar.dart'; // 커스텀 하단 네비게이�
 
 
 import 'features/view/home_page.dart';  // main page 
-import 'features/view/finder_review_list.dart'; // 리스트 조회 페이지
+import 'features/view/review_page.dart'; // 리스트 조회 페이지
 import 'features/view/finder_review_editor.dart'; // 글쓰거나, 수정하는 페이지
 import 'features/view/finder_review_detail.dart'; // 조회된 리스트의 상세 내용 조회 
 
@@ -25,7 +25,6 @@ class MyApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context,WidgetRef ref) {
     final router = ref.watch(routerProvider);
-
     return ProviderScope(
       child: MaterialApp.router(
         title: 'Local Finder',
@@ -59,8 +58,9 @@ final routerProvider = Provider<GoRouter>((ref) { ///Riverpod을 활용하여 �
         GoRoute(
           path:  MyAppRoutes.listPage,
           name:  MyAppRoutes.listPage,
-          builder: (context, state) => const FinderReviewList(),/// 리뷰 리스트 페이지
+          builder: (context, state) => const ReviewPage(),/// 리뷰 리스트 페이지
         ), 
+        
         GoRoute(
           path: MyAppRoutes.detailPage,
           name: MyAppRoutes.detailPage,
@@ -81,3 +81,4 @@ final routerProvider = Provider<GoRouter>((ref) { ///Riverpod을 활용하여 �
   ],
 );
 });
+
