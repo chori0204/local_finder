@@ -3,12 +3,11 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '/features/view_model/review_viewmodel.dart';
 
 class ReviewPage extends ConsumerStatefulWidget {
-  // final double mapX;
-  // final double mapY;
+  final double mapX;
+  final double mapY;
 
-  //const ReviewPage({required this.mapX, required this.mapY, super.key});
+  const ReviewPage({required this.mapX, required this.mapY, super.key});
   // const ReviewPage({super.key, required String x, required String y});
-  const ReviewPage({super.key});
   @override
   ConsumerState<ReviewPage> createState() => _ReviewPageState();
 }
@@ -22,7 +21,7 @@ class _ReviewPageState extends ConsumerState<ReviewPage> {
 
     // 리뷰 로드
     WidgetsBinding.instance.addPostFrameCallback((_) {
-    //  ref.read(reviewsProvider.notifier).loadReviews(widget.mapX, widget.mapY);
+     ref.read(reviewsProvider.notifier).loadReviews(widget.mapX, widget.mapY);
     });
   }
 
@@ -62,7 +61,7 @@ class _ReviewPageState extends ConsumerState<ReviewPage> {
                   onPressed: () async {
                     final text = _controller.text.trim();
                     if (text.isNotEmpty) {
-                    //  await ref.read(reviewsProvider.notifier).addReview(text, widget.mapX, widget.mapY);
+                      await ref.read(reviewsProvider.notifier).addReview(text, widget.mapX, widget.mapY);
                       _controller.clear();
                     }
                   },

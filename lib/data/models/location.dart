@@ -37,7 +37,5 @@ class Location {
     );
   }
 
-  get mabX => null;
 
-  get mabY => null;
 }

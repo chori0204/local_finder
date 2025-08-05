@@ -58,7 +58,7 @@ final routerProvider = Provider<GoRouter>((ref) { ///Riverpod을 활용하여 �
         GoRoute(
           path:  MyAppRoutes.listPage,
           name:  MyAppRoutes.listPage,
-          builder: (context, state) => const ReviewPage(),/// 리뷰 리스트 페이지
+          builder: (context, state) =>  ReviewPage(mapX: double.parse(state.pathParameters['mapX']!),mapY: double.parse(state.pathParameters['mapY']!),),/// 리뷰 리스트 페이지
         ), 
         
         GoRoute(

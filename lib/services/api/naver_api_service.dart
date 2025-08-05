@@ -27,7 +27,7 @@ Future<List<Location>> fetchNaverLocalSearch(String query) async {
     if (response.statusCode == 200) {
       final jsonBody = json.decode(response.body) as Map<String, dynamic>;
       final items = jsonBody['items'] as List<dynamic>;
-
+    print(jsonBody);
       return items.map((item) => Location.fromJson(item)).toList();
     } else {
       throw Exception('API 오류: ${response.statusCode}');

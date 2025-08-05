@@ -65,8 +65,8 @@ class FinderCard extends StatelessWidget {
           //     builder: (context) => ReviewPage(), //(x: result.mapx, y: result.mapy),
           //   ),
           // );
-          print('/review/${result.mabX}/${result.mabY}');
-          context.go('/review/${result.mabX}/${result.mabY}');
+          print('/list/${result.mapx}/${result.mapy}');
+          context.go('/list/${result.mapx}/${result.mapy}');
         },
       ),
     );

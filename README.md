@@ -9,36 +9,36 @@ assets/
 lib/
 ├── app.dart                # 앱 전체 설정 및 라우팅
 ├── main.dart               # 앱 진입점
+├──firebase_options.dart
 ├── core/                   # 공통 유틸, 상수, 테마 등
 │   ├── constants/
 │   │   └── app_colors.dart # 앱 테마별 색상 정의
-│   ├── utils/
-│   │   └── utils.dart
 │   └── theme/
 │   │   └── app_theme.dart   # 앱 테마 (app_color.dart - dark,light)
 │   ├── routers/
 │   │   └── app_routes.dart  # 라우트 path 상수 정의    
+│   ├── providers/
+│   │   └── search_providers.dart
 ├── data/                   # 데이터 소스, 모델, repository
 │   ├── models/
+│   │   ├── review.dart
 │   │   └── location.dart
-│   ├── datasources/
-│   │   └── finder_datasource.dart
 │   └── repositories/
-│       └── location_repository.dart 
+│       └── review_repository.dart 
 ├── features/               # 도메인(기능)별 폴더
 │    └──  view/           # View: 화면(UI) 위젯
-│    │   ├── finder_page.dart #지역을 조회하는 화면,카드는 finder_card.dart 에서 선언된 디자인을 가져와 뿌려주는 형식
-│    │   ├── finder_review_detail.dart # 지역리뷰를 상세하게 조회하는 화면 ,선택 삭제가능 
-│    │   ├── finder_review_editor.dart #지역리뷰를 작성,수정,삭제 하는 화면
-│    │   └── finder_review_list.dart # 해당건의 리뷰리스트를 카드형으로 보여주는 화면, 카드는 review_card.dart 에서 선언된 디자인을 가져와 뿌려주는 형식
+│    │   ├── home_page.dart #지역을 조회하는 화면,카드는 finder_card.dart 에서 선언된 디자인을 가져와 뿌려주는 형식
+│    │   ├── finder_review_detail.dart # 지역리뷰를 상세하게 조회하는 화면 ,선택 삭제가능 (진행중)
+│    │   ├── finder_review_editor.dart #지역리뷰를 작성,수정,삭제 하는 화면 (진행중)
+│    │   └── review_page.dart # 해당건의 리뷰리스트를 보여주는 화면, 
 │    ├── viewmodel/      # ViewModel: 상태 관리, 비즈니스 로직
 │    │   └── location_viewmodel.dart
 │    └── widgets/        # (선택) 해당 도메인에서만 쓰는 위젯
 │       ├── app_bar.dart    # 앱바를 라우트 네임에 따라 선택적으로 나오도록 설정 
 │       ├── bottom_navi_bar.dart #하단 네비게이션바
-│       ├── finder_card.dart # 지역정보 조회 하는 화면의 카드 위젯
-│       └── review_card.dart # 리뷰리스트의 조회 하는 화면의 카드 형 위젯
+│       └── finder_card.dart # 지역정보 조회 하는 화면의 카드 위젯
 ├── services/               # 외부 서비스(API, DB 등)
+│   ├──naver_api_service.dart
 │   └── api_service.dart
 <!-- └── shared/                 # 여러 도메인에서 공통으로 쓰는 위젯, 컴포넌트
     └── custom_button.dart -->
